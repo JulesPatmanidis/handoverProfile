@@ -6,6 +6,9 @@ SRCDIR=/var/tmp
 cd /var/tmp
 
 # Install dependencies
+sudo apt update
+sudo apt install -y software-properties-common lsb-release
+sudo apt clean all
 sudo apt-get install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
 
 ## Install ZMQ
