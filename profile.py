@@ -24,7 +24,7 @@ UBUNTU_1804_IMG = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU18-64-STD
 pc = portal.Context()
 request = pc.makeRequestRSpec()
 
-# Creatre 5gCore
+# Create 5gCore
 cn = request.RawPC("cn")
 cn.disk_image = UBUNTU_1804_IMG
 #cn.addService(rspec.Execute(shell="bash", command=DEPLOY_OPEN5GS))
@@ -32,18 +32,18 @@ cn.disk_image = UBUNTU_1804_IMG
 # Create the UE
 ue = request.RawPC("ue")
 ue.disk_image = UBUNTU_1804_IMG
-#ue.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+ue.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Create eNodeB1
 enb1 = request.RawPC("enb1")
 enb1.disk_image = UBUNTU_1804_IMG
-#enb1.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+enb1.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 
 # Create eNodeB2
 enb2 = request.RawPC("enb2")
 enb2.disk_image = UBUNTU_1804_IMG
-#enb2.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+enb2.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Add instructions
 tour = IG.Tour()

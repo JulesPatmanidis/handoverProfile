@@ -4,6 +4,9 @@ source $BINDIR/common.sh
 
 cd $SRCDIR
 
+# Install dependencies
+sudo apt-get install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
+
 # Install ZMQ
 git clone https://github.com/zeromq/libzmq.git
 cd libzmq
@@ -12,6 +15,7 @@ cd libzmq
 make
 sudo make install
 sudo ldconfig
+cd ..
 
 # Install CZMQ
 git clone https://github.com/zeromq/czmq.git
@@ -21,6 +25,8 @@ cd czmq
 make
 sudo make install
 sudo ldconfig
+cd ..
+
 
 # Install srsRAN
 git clone https://github.com/srsRAN/srsRAN.git
@@ -29,6 +35,10 @@ mkdir build
 cd build
 cmake ../
 make
+sudo make install
+srsran_install_configs.sh user
+sudo ldconfig
+
 
 
 
