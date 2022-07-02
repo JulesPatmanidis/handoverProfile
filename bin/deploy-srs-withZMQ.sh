@@ -1,9 +1,9 @@
-set -ex
+#set -ex
 #BINDIR=`dirname $0`
 # source $BINDIR/common.sh
 SRCDIR=/var/tmp
 
-cd $SRCDIR
+cd /var/tmp
 
 # Install dependencies
 sudo apt-get install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
