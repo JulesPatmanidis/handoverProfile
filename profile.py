@@ -30,28 +30,28 @@ epc = request.RawPC("epc")
 epc.disk_image = UBUNTU_1804_IMG
 iface1 = epc.addInterface("eth1")
 iface1.addAddress(rspec.IPv4Address("10.10.1.1", "255.255.255.0"))
-epc.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+#epc.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Create eNodeB1
 enb1 = request.RawPC("enb1")
 enb1.disk_image = UBUNTU_1804_IMG
 iface2 = enb1.addInterface("eth1")
 iface2.addAddress(rspec.IPv4Address("10.10.1.2", "255.255.255.0"))
-enb1.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+#enb1.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Create eNodeB2
 enb2 = request.RawPC("enb2")
 enb2.disk_image = UBUNTU_1804_IMG
 iface3 = enb2.addInterface("eth1")
 iface3.addAddress(rspec.IPv4Address("10.10.1.3", "255.255.255.0"))
-enb2.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+#enb2.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Create the UE
 ue = request.RawPC("ue")
 ue.disk_image = UBUNTU_1804_IMG
 iface4 = ue.addInterface("eth1")
 iface4.addAddress(rspec.IPv4Address("10.10.1.4", "255.255.255.0"))
-ue.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
+#ue.addService(rspec.Execute(shell="bash", command=DEPLOY_SRS_WITH_ZMQ))
 
 # Setup LAN
 link = request.LAN("lan")
