@@ -1,9 +1,15 @@
 #set -ex
 #BINDIR=`dirname $0`
 # source $BINDIR/common.sh
-#SRCDIR=/var/tmp
+SRCDIR=/var/tmp
 
-cd /var/tmp
+if [ -f $SRCDIR/srs-setup-complete ]; then
+    echo "setup already ran; not running again"
+    exit 0
+fi
+
+
+cd $SRCDIR
 
 # Install dependencies
 sudo apt update
@@ -41,9 +47,10 @@ cd build
 cmake ../
 make
 sudo make install
-srsran_install_configs.sh user
 sudo ldconfig
+./srsran_install_configs.sh service
+sudo cp /local/repository/etc/srsran/* /etc/srsran/
 
-
+touch $SRCDIR/srs-setup-complete
 
 
