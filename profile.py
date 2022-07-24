@@ -15,14 +15,34 @@ BIN_PATH = "/local/repository/bin"
 DEPLOY_SRS_WITH_ZMQ = os.path.join(BIN_PATH, "deploy-srs-withZMQ.sh")
 DEPLOY_OPEN5GS = os.path.join(BIN_PATH, "deploy-open5gs.sh")
 UBUNTU_1804_IMG = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU18-64-STD"
-# node_type = [
-#     ("d740",
-#      "Emulab, d740"),
-#     ("d430",
-#      "Emulab, d430")
-# ]
+node_type = [
+    ("d740",
+     "Emulab, d740"),
+    ("d430",
+     "Emulab, d430")
+]
+
 
 pc = portal.Context()
+
+pc.defineParameter("cn_node_type",
+                   "Type of compute node for Open5GS CN",
+                   portal.ParameterType.STRING,
+                   node_type[0],
+                   node_type)
+
+pc.defineParameter("enb1_node", "PhantomNet NUC+B210 for first eNodeB",
+                   portal.ParameterType.STRING, "nuc2", advanced=True)
+
+pc.defineParameter("enb2_node", "PhantomNet NUC+B210 for second eNodeB",
+                   portal.ParameterType.STRING, "nuc4", advanced=True)
+
+pc.defineParameter("ue_node", "PhantomNet NUC+B210 for UE",
+                   portal.ParameterType.STRING, "nuc1", advanced=True)
+
+params = pc.bindParameters()
+pc.verifyParameters()
+
 request = pc.makeRequestRSpec()
 
 # Create 5gCore
