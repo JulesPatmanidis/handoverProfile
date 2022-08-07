@@ -8,10 +8,10 @@ cd /var/tmp
 sudo apt update
 sudo apt install -y software-properties-common lsb-release
 sudo apt clean all
-sudo apt-get install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
+sudo apt-get -y install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev
 
 # Install ZMQ
-sudo apt-get install libzmq3-dev
+sudo apt-get -y install libzmq3-dev
 git clone https://github.com/zeromq/libzmq.git
 cd libzmq
 ./autogen.sh
@@ -41,7 +41,7 @@ cmake ../
 make
 sudo make install
 sudo ldconfig
-./srsran_install_configs.sh service
+sudo ./srsran_install_configs.sh service
 sudo cp /local/repository/etc/srsran/* /etc/srsran/
 
 
