@@ -1,6 +1,6 @@
 set -ex
 #BINDIR=`dirname $0`
-# source $BINDIR/common.sh
+#source $BINDIR/common.sh
 
 cd /var/tmp
 
@@ -35,13 +35,17 @@ cd ..
 # Install srsRAN
 git clone https://github.com/srsRAN/srsRAN.git
 cd srsRAN
+git checkout release_21_10
 mkdir build
 cd build
 cmake ../
-make
+make -j `nproc`
 sudo make install
 sudo ldconfig
-sudo ./srsran_install_configs.sh service
+#sudo srsran_install_configs.sh service
+cd /etc
+mkdir srsran
+sudo cp /local/repository/etc/srsran/examples/* /etc/srsran/
 sudo cp /local/repository/etc/srsran/* /etc/srsran/
 
 
