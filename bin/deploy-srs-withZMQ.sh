@@ -35,7 +35,7 @@ cd ..
 # Install srsRAN
 git clone https://github.com/srsRAN/srsRAN.git
 cd srsRAN
-git checkout release_21_10
+# git checkout release_21_10 # Introduces probelm during config install!!
 mkdir build
 cd build
 cmake ../
