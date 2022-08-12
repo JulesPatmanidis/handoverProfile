@@ -13,7 +13,7 @@ tourInstructions = "These are the instructions"
 
 BIN_PATH = "/local/repository/bin"
 DEPLOY_SRS_WITH_ZMQ = os.path.join(BIN_PATH, "deploy-srs-withZMQ.sh")
-DEPLOY_OPEN5GS = os.path.join(BIN_PATH, "deploy-open5gs.sh")
+DEPLOY_OPEN5GS = os.path.join(BIN_PATH, "install-open5gs.sh")
 UBUNTU_1804_IMG = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU18-64-STD"
 node_type = [
     ("d740",
