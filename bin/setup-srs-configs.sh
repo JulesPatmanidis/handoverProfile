@@ -1,0 +1,1 @@
+sudo cp /local/repository/etc/srsran/* /etc/srsran/

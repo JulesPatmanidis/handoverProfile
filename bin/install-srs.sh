@@ -21,5 +21,4 @@ make -j `nproc`
 sudo make install
 sudo ldconfig
 sudo srsran_install_configs.sh service
-#sudo cp /local/repository/etc/srsran/examples/* /etc/srsran/
 sudo cp /local/repository/etc/srsran/* /etc/srsran/
