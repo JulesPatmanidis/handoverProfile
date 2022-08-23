@@ -7,4 +7,4 @@ ZMQ_ARGS="--rf.device_name=zmq --rf.device_args=\"${PORT_ARGS},id=enb,base_srate
 
 OTHER_ARGS="--enb_files.rr_config=rr1.conf"
 
-sudo srsenb enb.conf ${LOG_ARGS} ${ZMQ_ARGS} ${OTHER_ARGS} $@
+sudo srsenb enb1.conf ${LOG_ARGS} ${ZMQ_ARGS} ${OTHER_ARGS} $@

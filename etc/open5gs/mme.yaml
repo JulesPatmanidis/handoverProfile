@@ -215,14 +215,14 @@ mme:
       # - addr: 192.168.1.1
     gummei:
       plmn_id:
-        mcc: 208
-        mnc: 93
+        mcc: 001 #208
+        mnc: 01 #93
       mme_gid: 2
       mme_code: 1
     tai:
       plmn_id:
-        mcc: 208
-        mnc: 93
+        mcc: 001 #208
+        mnc: 01 #93
       # tac: 1
       tac: 7
     security:
