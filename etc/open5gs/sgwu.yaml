@@ -84,7 +84,8 @@ sgwu:
     pfcp:
       - addr: 127.0.0.6
     gtpu:
-      - addr: 192.168.1.1
+      - addr: 10.10.1.1 # epc address
+      #- addr: 192.168.1.1
 
 #
 # sgwc:
